@@ -1,0 +1,29 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/universal
+{
+	"name": "Default Linux Universal",
+	"build": {
+		"dockerfile": "Containerfile",
+		"context": ".",
+		"args": {
+			"FEDORA_COMPAT" : "1", // enables fedora compatibility mode (extra dialout group with gid 18)
+			"VARIANT": "bookworm"
+		}
+	},
+
+	// Configure tool-specific properties.
+  	"customizations": {
+		"vscode": {
+		"extensions": ["ms-vscode.cpptools"]
+		}
+	},
+
+	"mounts": [
+		"source=/dev/,target=/dev/,type=bind,consistency=consistent"
+	],
+	"runArgs": [
+		"--privileged",
+		"--device=/dev/ttyACM0",
+		"--name=maker-devcontainer"
+	]
+}
