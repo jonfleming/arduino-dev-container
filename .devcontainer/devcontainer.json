@@ -14,7 +14,11 @@
 	// Configure tool-specific properties.
   	"customizations": {
 		"vscode": {
-		"extensions": ["ms-vscode.cpptools"]
+		"extensions": [
+			"ms-vscode.cpptools",
+			"ms-vscode.vscode-serial-monitor",
+			"thelastoutpostworkshop.arduino-maker-workshop"
+		]
 		}
 	},
 
